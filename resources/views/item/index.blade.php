@@ -58,12 +58,13 @@ $(document).ready(function () {
                      "data":{ _token: "{{csrf_token()}}"}
                    },
             "columns": [
-                { "data": "id" ,sortable:false},
+                { "data": "id" ,sortable:true},
                 { "data": "name",sortable:false },
                 { "data": "quantity",sortable:false },
                 { "data": "manufacture_date",sortable:false},
                 { "data": "created_at",sortable:false},
-                 {
+                {
+                bSortable: false,
                 "render": function ( data, type, row ) {
                     return '<a href="/all-items/'+row.id+'/edit" class="btn btn-primary btn-sm">Edit</a> <a href="/all-items/delete/'+row.id+'" class="btn btn-danger btn-sm">Delete</a>';
                 },
